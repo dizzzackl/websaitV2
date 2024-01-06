@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Хостинг файлов</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .menu {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .menu a {
+            text-decoration: none;
+            color: #333;
+            margin: 0 10px;
+        }
+
+        .files-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .files-list li {
+            margin-bottom: 10px;
+        }
+
+        #about, #files {
+            margin-top: 30px;
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                padding: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Хостинг файлов</h1>
+        <div class="menu">
+            <a href="/">Главная</a>
+            <a href="/files">Загрузить файл</a>
+        </div>
+        <div id="about">
+            <h2>О проекте</h2>
+            <p>Сайт создан DJackl в развлекательных целях</p>
+        </div>
+        <div id="files">
+            <h2>Файлы</h2>
+            <ul class="files-list">
+              {% for file in files %}
+                 <li>{{ file.name }} - <a href="http://gera228.pythonanywhere.com/downloads/{{ file.name }}">http://gera228.pythonanywhere.com/downloads/{{ file.name }}</a></li>
+              {% endfor %}
+           </ul>
+        </div>
+    </div>
+</body>
+</html>
